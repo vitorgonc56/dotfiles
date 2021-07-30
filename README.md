@@ -10,4 +10,4 @@ it has shit like:
 
 ## Nobody probably wants to see the qtile rice, but here it is:
 
-<img src=https://i.postimg.cc/L5ShtD28/Captura-de-tela-2021-07-30-02-27-59.png>yay!</img>
+<img src=https://i.postimg.cc/L5ShtD28/Captura-de-tela-2021-07-30-02-27-59.png>
