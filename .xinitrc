@@ -37,5 +37,6 @@ setxkbmap -option caps:escape
 urxvtd -q -o -f
 
 syncthing &
+volumeicon &
 
 exec qtile start

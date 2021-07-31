@@ -18,7 +18,15 @@ export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput se
 
 export PATH=$PATH:$HOME/.local/bin:$HOME/.local/share/bin:$HOME/docs/scripts/
 
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+
 export RXVT_SOCKET="$XDG_RUNTIME_DIR"/urxvtd
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+
+export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 
 bind "set completion-ignore-case on"
 
@@ -27,7 +35,6 @@ alias la="exa -a --color=auto"
 alias l="exa --color=auto"
 
 alias find="fd"
-alias cat="bat"
 
 alias ..="cd .."
 alias ...="cd ../.."
