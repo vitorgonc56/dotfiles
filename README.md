@@ -7,6 +7,7 @@ it has shit like:
 * bad init.vim
 * bad paru config too
 * bad newsboat urls (i just put it there so that i don't lose it you probably won't care
+* also bad scripts such as read manual pages in zathura and play music with mpv reading from a file
 
 ## Nobody probably wants to see the qtile rice, but here it is:
 
