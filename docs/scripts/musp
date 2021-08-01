@@ -1,2 +1,2 @@
 #!/bin/sh
-kill -15 $(pidof mpv) || cat ~/docs/playlist | shuf | dmenu -l 15 | sed "s/\s*#.*//g; /^\s*$/ d" | xargs mpv --no-video
+kill -15 $(pidof mpv) || shuf ~/docs/syncthing/playlist | dmenu -l 15 | sed "s/\s*#.*//g; /^\s*$/ d" | xargs mpv --no-video

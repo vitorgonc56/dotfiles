@@ -3,11 +3,10 @@ from typing import List  # noqa: F401
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, KeyChord
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = "urxvtc"
-browser = "librewolf"
+browser = "brave"
 
 keys = [
     # Switch between windows
@@ -53,7 +52,7 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "r", lazy.spawn("dmenu_run"), desc="Launch Dmenu"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch Browser"),
-    Key([mod, "shift"], "s", lazy.spawn("xfce4-screenshooter"), desc="Spawn screenshoter"),
+    Key([mod, "shift"], "s", lazy.spawn("xfce4-screenshooter -f -c -s docs/syncthing/"), desc="Spawn screenshoter"),
 
     # Toggle between different layouts as defined below
     Key([mod], "space", lazy.next_layout(), desc="Toggle between layouts"),
@@ -65,7 +64,9 @@ keys = [
 
     KeyChord([mod], "p", [
         Key([], "p", lazy.spawn("passmenu"), desc='Retrieve passwords with dmenu'),
-        Key([], "m", lazy.spawn("musicplay"), desc='Music!'),
+        Key([], "m", lazy.spawn("musp-all"), desc='Music!'),
+        Key([mod], "m", lazy.spawn("musp"), desc='Music!'),
+        Key([], "y", lazy.spawn("manpdf"), desc="Man pages with pdfs!"),
     ]),
 ]
 
@@ -129,10 +130,15 @@ screens = [
                     urgent_text='e4dcf5'),
 
                 widget.Spacer(length=bar.STRETCH),
+                widget.Wallpaper(directory="~/img/wallpaper/",
+                    wallpaper_command=['feh', '--bg-fill', '--no-fehbg'],
+                    random_selection=True,
+                    label="Change Wallpaper",
+                    markup=False),
+                widget.Spacer(length=3),
                 widget.Systray(),
                 widget.Clock(format='%d/%m %H:%M'),
                 widget.CurrentLayoutIcon(scale=0.8),
-                widget.Wallpaper(directory="~/img/wallpaper/", wallpaper="240sx.jpg", wallpaper_command=['feh', '--bg-fill'], random_selection=True, label="", markup=False),
             ],
             24,
         ),
